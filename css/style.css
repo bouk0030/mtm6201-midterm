@@ -1,0 +1,39 @@
+/* These colors are used across the page. */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gold: #d69e3d;
+  --dark-gold: #966f2c;
+  --bg: #f3f0e9;
+}
+
+/* Remove the browser's default space and use easier box sizes. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Set the main font and background color. */
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg);
+}
+
+/* Use a different font for headings and navigation. */
+h1, h2, h3, nav { font-family: "Lato", sans-serif; }
+
+/* Keep the content centered and limit its width. */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* Hide the skip link until a keyboard user selects it. */
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 0; top: 0; background: var(--white); padding: 0.5rem; z-index: 10; }
+
+/* Style the dark header and arrange its items. */
+.header { background-color: var(--black); padding: 1rem 0; }
+.header-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.menu { list-style: none; display: flex; gap: 2rem; }
+.menu a { color: var(--white); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
+
+/* On wider screens, place the logo and menu on one line. */
+@media (min-width: 768px) {
+  .header-content { flex-direction: row; justify-content: space-between; }
+}
