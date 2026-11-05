@@ -297,3 +297,93 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
     align-items: center;
   }
 }
+
+/* These cards show customer quotes over their photos. */
+.testimonials {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 4rem 0;
+}
+
+.testimonial-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  position: relative;
+  min-height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.testimonial-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover .testimonial-img {
+  transform: scale(1.05);
+}
+
+.testimonial-caption {
+  position: relative;
+  padding: 4rem 1rem 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.testimonial-quote {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-name {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+/* This footer shows the copyright text. */
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  font-size: 0.875rem;
+  padding-bottom: 2rem;
+}
+
+.footer .container {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials .section-title {
+    width: 50%;
+  }
+
+  .testimonial-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonial {
+    min-height: 24rem;
+  }
+}
+
+/*
+  AI prompt used: "Add a zoom effect when we hover over testimonial photos."
+  I wanted only these photos to feel interactive. The card clips the zoomed
+  photo, and the transition is off for people who prefer less motion.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-img {
+    transition: none;
+  }
+}
