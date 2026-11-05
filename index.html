@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- This part sets the page information and styles -->
+  <!-- The title and linked files give the page its name fonts and styles -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Coffee House</title>
+  <title>Midterm Project</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <!-- This link helps keyboard users go to the main content -->
+  <!-- This link is kept off-screen until focused so keyboard users can skip the header and reach the main content -->
   <a class="skip" href="#main">Skip to main content</a>
 
-  <!-- The header has the logo and the main navigation -->
+  <!--  each link jumps to a page section -->
   <header class="header">
     <div class="container header-content">
       <a class="logo" href="index.html">
@@ -30,9 +30,9 @@
     </div>
   </header>
 
-  <!-- Page content goes inside this main area -->
+  <!-- the part where the main element holds the content that is unique to this page -->
   <main id="main">
-    <!-- This is the main banner with a link to the menu -->
+    <!-- The hero introduces the coffee house its button takes visitors to the menu section below -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-content">
         <h1 id="hero-title" class="hero-title">Experience coffee like never before</h1>
@@ -41,7 +41,7 @@
       </div>
     </section>
 
-    <!-- This section welcomes visitors and shows coffee photos -->
+    <!-- welcome section uses a photo gallery to show coffee  and the shop experience -->
     <section class="welcome" aria-labelledby="welcome-title">
       <div class="container">
         <p class="eyebrow">Welcome to My Coffee House</p>
@@ -57,7 +57,7 @@
       </div>
     </section>
 
-    <!-- This section shows the main benefits of our coffee house. -->
+    <!--  list groups the three main benefits so visitors can compare them easily -->
     <section class="benefits" aria-labelledby="benefits-title">
       <div class="container">
         <p class="eyebrow">What we offer</p>
@@ -83,7 +83,6 @@
       </div>
     </section>
 
-    <!-- These banners link to the menu and locations. -->
     <section class="cta" aria-label="Menu and locations">
       <div class="container cta-grid">
         <div class="cta-box" id="menu">
@@ -99,7 +98,7 @@
       </div>
     </section>
 
-    <!-- This section shares the story of our coffee house. -->
+    <!-- The image comes before the text in the HTML so it stays first when the layout stacks on mobile -->
     <section class="story" id="about" aria-labelledby="story-title">
       <div class="container story-grid">
         <img class="story-img" src="images/about-us.jpeg" alt="Two baristas carefully preparing espresso at a chrome espresso machine">
@@ -113,7 +112,7 @@
       </div>
     </section>
 
-    <!-- This section shares what customers think about the coffee house. -->
+    <!-- Each article groups one customer's photo words and name so the testimonial makes sense on its own -->
     <section class="testimonials" aria-labelledby="testimonials-title">
       <div class="container">
         <p class="eyebrow">Testimonials</p>
@@ -152,7 +151,7 @@
     </section>
   </main>
 
-  <!-- This footer shows the copyright. -->
+  <!--  footer ends the page with its copyright information. -->
   <footer class="footer">
     <div class="container">
       <p>© My Coffee Company 2024</p>

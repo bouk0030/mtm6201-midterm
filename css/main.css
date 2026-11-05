@@ -1,4 +1,4 @@
-/* These colors are used across the page. */
+/* Reusing these color names keeps the same colors consistent across sections. */
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -7,38 +7,40 @@
   --bg: #f3f0e9;
 }
 
-/* Remove the browser's default space and use easier box sizes. */
+/* Starting with no default margin or padding makes spacing easier to control. */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Set the main font and background color. */
+/* Karla is used for regular text with the page color set behind every section. */
 body {
   font-family: "Karla", sans-serif;
   font-size: 1rem;
   background-color: var(--bg);
 }
 
-/* Use a different font for headings and navigation. */
+/* Lato helps headings and navigation stand out from the regular text */
 h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 
-/* Keep the content centered and limit its width. */
+/* The container centers content and stops lines and images from getting too wide */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
-/* Hide the skip link until a keyboard user selects it. */
+/* The link moves off-screen instead of being removed so keyboard users can still reach it
+   The focus rule brings it back when a user tabs to it */
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 0; top: 0; background: var(--white); padding: 0.5rem; z-index: 10; }
 
-/* Style the dark header and arrange its items. */
+/* The header starts as a centered stacked layout for small screens */
 .header { background-color: var(--black); padding: 1rem 0; }
 .header-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .menu { list-style: none; display: flex; gap: 2rem; }
 .menu a { color: var(--white); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; }
 
-/* On wider screens, place the logo and menu on one line. */
+/* From this width, the logo and navigation fit on one row instead of stacking. */
 @media (min-width: 768px) {
   .header-content { flex-direction: row; justify-content: space-between; }
 }
 
-/* This part styles the main banner. */
+/* The dark layer makes white text easier to read over the photo.
+   The background position also controls which part of the photo stays in view */
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
                     url("../images/hero-background.jpg");
@@ -53,6 +55,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 }
 
 .hero-content {
+  /* A flex child can shrink to its text, so this keeps the content full width */
   width: 100%;
 }
 
@@ -67,7 +70,8 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   margin: 0 auto 2rem;
 }
 
-/* These styles make the menu link look like a button. */
+/* All button styles start here so each button type shares the same font and padding.
+   The clear border keeps outlined and solid buttons the same size */
 .btn {
   display: inline-block;
   font-family: "Karla", sans-serif;
@@ -93,7 +97,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   transform: scale(0.97);
 }
 
-/* This button has a clear border on the dark banner. */
+/* The outline version stays see-through so the dark photo remains visible */
 .btn-outline {
   background-color: transparent;
   color: var(--white);
@@ -110,7 +114,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   transform: scale(0.97);
 }
 
-/* This banner uses a dark photo behind its links. */
+/* The dark layer keeps the white text and buttons readable over the banner photo */
 .cta {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url("../images/coffee-shop.jpeg");
@@ -128,6 +132,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 
 @media (min-width: 768px) {
   .hero {
+    /* A taller hero gives the background more room on larger screens */
     min-height: 30rem;
   }
 
@@ -151,7 +156,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   }
 }
 
-/* These styles make shared text easy to read. */
+/* Shared text styles let sections use the same label and heading appearance */
 .eyebrow {
   color: var(--gold);
   text-transform: uppercase;
@@ -165,7 +170,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   margin-bottom: 1.5rem;
 }
 
-/* This section shows photos in a grid. */
+/* On mobile the photos use two columns and the main photo starts on its own full row */
 .welcome {
   padding: 4rem 0;
 }
@@ -187,7 +192,8 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   grid-column: 1 / -1;
 }
 
-/* Change the gallery layout on wider screens. */
+/* On wider screens the main photo spans two rows in a wider column.
+   The other photos fill the two smaller columns beside it */
 @media (min-width: 768px) {
   .section-title {
     font-size: 2.027rem;
@@ -209,7 +215,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   }
 }
 
-/* These styles show the benefits in a flexible row. */
+/* The list can wrap when items do not fit Centering the row also centers an incomplete last row*/
 .benefits {
   padding: 4rem 0;
   text-align: center;
@@ -241,17 +247,21 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 
 @media (min-width: 768px) {
   .benefit {
+    /* Each item uses half the row, so tablets show two at a time
+       The list centers the third item when it wraps to its own row */
     flex: 0 0 calc(50% - 1rem);
   }
 }
 
 @media (min-width: 1100px) {
   .benefit {
+    /* Each item uses one third of the row, so all three fit across on desktop */
     flex: 0 0 calc(33.333% - 1.5rem);
   }
 }
 
-/* This section shows a photo and text about the coffee house. */
+/* The image and text stack in source order on mobile
+   The tablet rule places them in two columns and aligns them at the center */
 .story {
   padding: 4rem 0;
 }
@@ -275,7 +285,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   margin-top: 1rem;
 }
 
-/* This button uses dark colors on the light page. */
+/* This button uses dark colors so it stands out on the light story section */
 .btn-dark {
   background-color: var(--black);
   color: var(--white);
@@ -298,7 +308,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   }
 }
 
-/* These cards show customer quotes over their photos. */
+/* The photo fills each card, with the quote and name layered above it */
 .testimonials {
   background-color: var(--black);
   color: var(--white);
@@ -320,6 +330,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 }
 
 .testimonial-img {
+  /* Absolute positioning lets the photo fill the card without pushing the caption down */
   position: absolute;
   inset: 0;
   width: 100%;
@@ -329,10 +340,12 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 }
 
 .testimonial:hover .testimonial-img {
+  /* The photo grows on hover while the card's overflow rule hides its extra edges */
   transform: scale(1.05);
 }
 
 .testimonial-caption {
+  /* This keeps the caption above the photo and lets its dark fade improve text contrast */
   position: relative;
   padding: 4rem 1rem 1rem;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
@@ -349,7 +362,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   font-size: 0.875rem;
 }
 
-/* This footer shows the copyright text. */
+/* The footer repeats the dark section color and centers the copyright line */
 .footer {
   background-color: var(--black);
   color: var(--white);
@@ -377,11 +390,13 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   }
 }
 
+/* People who prefer less motion see the hover size change without a gradual transition. */
 /*
-  AI prompt used: "Add a zoom effect when we hover over testimonial photos."
-  I wanted only these photos to feel interactive. The card clips the zoomed
-  photo, and the transition is off for people who prefer less motion.
+  AI prompt used: "Add a zoom effect when we hover over testimonial photos"
+  I wanted only these photos to feel interactive The card clips the zoomed
+  photo and the transition is off for people who prefer less motion
 */
+
 @media (prefers-reduced-motion: reduce) {
   .testimonial-img {
     transition: none;
