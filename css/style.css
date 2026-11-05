@@ -93,6 +93,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   transform: scale(0.97);
 }
 
+/* This button has a clear border on the dark banner. */
 .btn-outline {
   background-color: transparent;
   color: var(--white);
@@ -109,6 +110,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   transform: scale(0.97);
 }
 
+/* This banner uses a dark photo behind its links. */
 .cta {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url("../images/coffee-shop.jpeg");
@@ -207,6 +209,7 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
   }
 }
 
+/* These styles show the benefits in a flexible row. */
 .benefits {
   padding: 4rem 0;
   text-align: center;
@@ -245,5 +248,52 @@ h1, h2, h3, nav { font-family: "Lato", sans-serif; }
 @media (min-width: 1100px) {
   .benefit {
     flex: 0 0 calc(33.333% - 1.5rem);
+  }
+}
+
+/* This section shows a photo and text about the coffee house. */
+.story {
+  padding: 4rem 0;
+}
+
+.story-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.story-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.story-text p {
+  margin-bottom: 1rem;
+}
+
+.story-text .btn {
+  margin-top: 1rem;
+}
+
+/* This button uses dark colors on the light page. */
+.btn-dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: var(--dark-gold);
+}
+
+.btn-dark:active {
+  transform: scale(0.97);
+}
+
+@media (min-width: 768px) {
+  .story-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
   }
 }
